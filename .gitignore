@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
+missing_data_study/cafe_sales/cleaned_cafe_sales.csv
