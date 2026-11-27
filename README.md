@@ -1,19 +1,32 @@
-# Data Cleaning & Missing-Value Studies
+# Feature Engineering & Data Cleaning
 
-Course-based learning notebooks for exploring messy tabular data. These are educational exercises, not independent production pipelines.
+**Guided data cleaning coursework & practical notebooks** · Python · pandas · NumPy
 
-## Cafe Sales
+This repository collects the data cleaning exercises I practiced while learning to handle missing values, inconsistent records and categorical data.
+
+**Scope and ownership:** These are guided learning exercises, not independently designed production pipelines.
+
+## Study notebooks
+
+### Cafe Sales
 
 [Notebook](missing_data_study/cafe_sales/cafe_sales_cleaning.ipynb) · [Raw data](missing_data_study/cafe_sales/dirty_cafe_sales.csv)
 
-Convert numeric fields, recover missing values using quantity, price and total relationships, infer item names only from unique prices, and preserve unknown categories. Report nonpositive quantities/prices and inconsistent totals before exporting the cleaned CSV locally. The fixed price mapping is an assumption of this exercise, not a general retail rule. The date column is dropped as in the original exercise.
+Recover missing numeric values using quantity, unit price and total relationships. Infer item names only when prices uniquely identify them, preserve unknown categories, and check nonpositive values and inconsistent totals before exporting the cleaned CSV. The fixed price mapping is specific to this exercise.
 
-## Titanic
+### Titanic
 
 [Notebook](missing_data_study/titanic/titanic_cleaning.ipynb) · [Data](missing_data_study/titanic/titanic.csv)
 
-Compare row/column deletion, mean and median age imputation, and categorical mode imputation. This notebook is a comparison of methods rather than a finalized cleaned dataset.
+Compare row and column deletion, mean and median age imputation, and categorical mode imputation. This is a comparison of cleaning methods rather than a finalized cleaned dataset.
 
-## Run locally
+## Getting started
 
-Create a virtual environment, install `python -m pip install -r requirements.txt`, and open `python -m jupyter notebook`. Run each notebook from its own folder. See [DATA_SOURCES.md](DATA_SOURCES.md) for provenance limitations. The edited Cafe Sales notebook has cleared outputs and must be rerun to regenerate its cleaned CSV. Dependencies and runtime behavior have not yet been verified.
+1. Create and activate a Python virtual environment.
+2. Install dependencies: `python -m pip install -r requirements.txt`.
+3. Open Jupyter: `python -m jupyter notebook`.
+4. Run each notebook from its own directory. The Cafe Sales notebook generates `cleaned_cafe_sales.csv` locally.
+
+## Data and reproducibility
+
+The notebooks were run locally during the cleanup using Python 3.12. Dependency versions are not locked. See [DATA_SOURCES.md](DATA_SOURCES.md) for dataset information and provenance limitations.
