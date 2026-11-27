@@ -1,43 +1,19 @@
-# 🧹 Data Cleaning & Missing-Value Studies
+# Data Cleaning & Missing-Value Studies
 
-Hands-on Python notebooks exploring practical approaches to cleaning messy tabular data. These are **learning exercises**, not production preprocessing pipelines.
+Course-based learning notebooks for exploring messy tabular data. These are educational exercises, not independent production pipelines.
 
-## Projects
+## Cafe Sales
 
-### ☕ Cafe Sales — data cleaning
-**Notebook:** [`missing_data_study/cafe_sales/cale_sales_cleaning.ipynb`](missing_data_study/cafe_sales/cale_sales_cleaning.ipynb)
+[Notebook](missing_data_study/cafe_sales/cafe_sales_cleaning.ipynb) · [Raw data](missing_data_study/cafe_sales/dirty_cafe_sales.csv)
 
-**Files:** [dirty dataset](missing_data_study/cafe_sales/dirty_cafe_sales.csv) · [saved cleaned dataset](missing_data_study/cafe_sales/cleaned_cafe_sales.csv)
+Convert numeric fields, recover missing values using quantity, price and total relationships, infer item names only from unique prices, and preserve unknown categories. Report nonpositive quantities/prices and inconsistent totals before exporting the cleaned CSV locally. The fixed price mapping is an assumption of this exercise, not a general retail rule. The date column is dropped as in the original exercise.
 
-The notebook explores:
-- Converting numeric-looking text with `pd.to_numeric(..., errors="coerce")`
-- Treating `ERROR` and `UNKNOWN` as missing values
-- Recovering some missing values using relationships between quantity, unit price, and total spent
-- Removing remaining rows with missing values in selected numeric columns
-- Filling selected categorical fields and dropping an unused date column
+## Titanic
 
-**Reproducibility note:** The included `cleaned_cafe_sales.csv` is a saved example output. The notebook's export step is currently **commented out**, so running it does not automatically overwrite that CSV.
+[Notebook](missing_data_study/titanic/titanic_cleaning.ipynb) · [Data](missing_data_study/titanic/titanic.csv)
 
-### 🚢 Titanic — missing-value treatment
-**Notebook:** [`missing_data_study/titanic/titanic_cleaning.ipynb`](missing_data_study/titanic/titanic_cleaning.ipynb) · [dataset](missing_data_study/titanic/titanic.csv)
+Compare row/column deletion, mean and median age imputation, and categorical mode imputation. This notebook is a comparison of methods rather than a finalized cleaned dataset.
 
-Explores:
-- Inspecting missing-value counts and distributions
-- Comparing deletion approaches without permanently applying them to the dataset
-- Comparing mean and median imputation for age
-- Filling embarked values with the most common category
-- Plotting the effects of different imputation strategies
+## Run locally
 
-**Note:** This notebook compares missing-data techniques rather than exporting a single finalized cleaned Titanic dataset.
-
-## Tools
-
-Python · pandas · NumPy · Matplotlib · Seaborn · Jupyter Notebook
-
-## Running the notebooks
-
-Open each notebook from its own directory to keep the relative CSV file paths working. Run cells in order in an environment with the listed packages installed.
-
-## Scope
-
-These projects demonstrate preprocessing practice and exploratory decisions. They do not include model training, formal data-quality tests, or deployment.
+Create a virtual environment, install `python -m pip install -r requirements.txt`, and open `python -m jupyter notebook`. Run each notebook from its own folder. See [DATA_SOURCES.md](DATA_SOURCES.md) for provenance limitations. The edited Cafe Sales notebook has cleared outputs and must be rerun to regenerate its cleaned CSV. Dependencies and runtime behavior have not yet been verified.
